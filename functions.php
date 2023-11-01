@@ -13,10 +13,11 @@
 
     add_action( 'init' , 'portfolioPanagiotis_menus' );
 
-    // dynamic title - function tag - (αυτο το περνει απο το wp στις ρυθμησεις > γενικα [Τίτλος ιστότοπου κ Υπότιτλος] στον πινακα ελεγχου )
+    
 
     function titleName(){
-        add_theme_support( 'title-tag' );
+        add_theme_support( 'title-tag' ); // dynamic title - function tag - (αυτο το περνει απο το wp στις ρυθμησεις > γενικα [Τίτλος ιστότοπου κ Υπότιτλος] στον πινακα ελεγχου )
+        add_theme_support( 'custom-logo' ); // dynamic logo  (αυτο το περνει απο το wp στο Εμφανιση > θεματα(themes) > Προσαρμογη(customize) > ταυτοτητα ιστοτοπου > logo )
     }
 
     add_action( 'after_setup_theme' , 'titleName' );

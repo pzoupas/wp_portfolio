@@ -63,27 +63,26 @@
 		</nav>
     </header>  -->
 
-	<header id="header" class="header show">
+	<header id="header" class="header">
+	
 		<div class="header-wrapper">
-			<a href="index" id="logo"><img src="/logo-img/logo.jpg" alt=""></a>
-			<div class="menu">
-
+		<?php
+			if (function_exists('the_custom_logo')){
+				the_custom_logo();
+			}
+		?>
+			<!-- <div id="logo"><img src="images/logo.png" alt=""></div> -->
+			<div class="nav-menu">
 			<?php
     			wp_nav_menu(
 					array(
 						'menu' => 'primary',
-						'container' => 'primary',
+						'container' => '',
 						'theme_location' => 'primary',
 						'items_wrap' => '<ul id="" class="navbar-nav">%3$s</ul>'
 					)
-
 				);
 			?>
-				<!-- <ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="index">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
-				</ul> -->
 			</div>
 			<!-- <button class="burger" onclick="toggleMenu()"></button> -->
 		</div>
