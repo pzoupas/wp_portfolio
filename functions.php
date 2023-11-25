@@ -28,23 +28,96 @@
         $version = wp_get_theme() ->get('Version');
 
         wp_enqueue_style('portfolioPanagiotis-styles',get_template_directory_uri()."/style.css" , array('portfolioPanagiotis-bootstrap') , $version , 'all' ); // Βάζει στην ουρά ένα φύλλο στυλ CSS. - Enqueues a CSS stylesheet.
+        wp_enqueue_style('portfolioPanagiotis-front-page-styles',get_template_directory_uri()."/front-page.css" , array('portfolioPanagiotis-bootstrap') , $version , 'all' ); // Βάζει στην ουρά ένα φύλλο στυλ CSS. - Enqueues a CSS stylesheet.
         wp_enqueue_style('portfolioPanagiotis-bootstrap',"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" , array(), '4.4.1' , 'all'); // Βάζει στην ουρά ένα φύλλο στυλ CSS. - Enqueues a CSS stylesheet.
-        wp_enqueue_style('portfolioPanagiotis-fontawesime', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" , array(), '5.13.0' , 'all'); // Βάζει στην ουρά ένα φύλλο στυλ CSS. - Enqueues a CSS stylesheet.
-    }
-
-    add_action( 'wp_enqueue_scripts' , 'portfolioPanagiotis_register_styles' );
-
-    
-    function portfolioPanagiotis_register_scripts(){
-
-        wp_enqueue_script( 'portfolioPanagiotis-jquery', 'https://code.jquery.com/jquery-3.4.1.slim.min.js' , array() , '3.4' , true ); //Βάζει στην ουρά ένα σενάριο(scripts).
+        wp_enqueue_style('portfolioPanagiotis-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" , array(), '5.13.0' , 'all'); // Βάζει στην ουρά ένα φύλλο στυλ CSS. - Enqueues a CSS stylesheet.
+        wp_enqueue_style('portfolioPanagiotis-custom-google-fonts', "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Kalam:wght@300;400;700&family=Special+Elite&display=swap" , array(), '0.1' , 'all'); 
+        wp_enqueue_script( 'portfolioPanagiotis-jquery', 'https://code.jquery.com/jquery-3.6.4.min.js' , array() , '3.6.4' , true );//Βάζει στην ουρά ένα σενάριο(scripts).
         wp_enqueue_script( 'portfolioPanagiotis-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' , array() , '1.16.0' , true ); //Βάζει στην ουρά ένα σενάριο(scripts).
         wp_enqueue_script( 'portfolioPanagiotis-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' , array() , '4.4.1' , true ); //Βάζει στην ουρά ένα σενάριο(scripts).
-        wp_enqueue_script( 'portfolioPanagiotis-main', get_template_directory_uri()."/main.js" , array() , '1.0' ,true ); //Βάζει στην ουρά ένα σενάριο(scripts).
-    
+        wp_enqueue_script( 'portfolioPanagiotis-main', get_template_directory_uri()."/main.js" , array('jquery') , $version , true ); //Βάζει στην ουρά ένα σενάριο(scripts).
     }
 
+
     add_action( 'wp_enqueue_scripts' , 'portfolioPanagiotis_register_styles' );
+
+    
+
+    
+    function my_acf_init_block_types() {
+
+        // Check function exists.
+        if( function_exists('acf_register_block_type') ) {
+
+            // register a testimonial block.
+            acf_register_block_type(array(
+                'name'              => 'text-block-without-border',
+                'title'             => __('Custom Text block'),
+                'description'       => __('A block with text in a box'),
+                'render_template'   => 'acf-blocks/text-blocks/custom-text-block.php',
+                'category'          => 'formatting',
+                'icon'              => 'admin-comments',
+                'enqueue_style' => get_template_directory_uri() . '/acf-blocks/text-blocks/acf-text-blocks.css',
+                'keywords'          => array( 'text', 'block' ),
+                'example'           => array(
+                    'attributes' => array(
+                        'mode' => 'preview',
+                        'data' => array(
+                            'is_preview'    => true
+                        )
+                    )
+                )
+            ));
+        }
+    }
+    add_action('acf/init', 'my_acf_init_block_types');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  
@@ -79,12 +152,3 @@
 
 
 ?>
-
-
-
-
-
-
-
-
-

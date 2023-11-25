@@ -30,14 +30,15 @@ Tag: Bootstrap
     --lightgray: #eeeeee;
     --dark-charcoal:#1a1a1a;
     --dark: #434242;
-    --darkTheme:#4c4c4c
+    --darkTheme:#4c4c4c;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-family: 'Cinzel', 'Kalam', cursive  , 'Special Elite' , serif ;
+    /* --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
     /* Font Sizes */
     --font-normal: 1em;
     --font-small: 0.8125rem;
@@ -61,11 +62,14 @@ html {
 	font: inherit;
 }
 body {
-    color: var(--darkTheme);
+    color: var(--dark-charcoal);;
     overflow-x: hidden;
     line-height: 20px;
     font-size: 16px;
     letter-spacing: 0.3px;
+    /* font-family:  'Cinzel' , serif ; */
+    font-family: 'Special Elite';
+    font-weight: 400;
 }
 h1{
     display: none;
@@ -123,13 +127,15 @@ section{
     
 }
 
+
 h2 {
-    font-size: 40px;
+    /* font-size: 40px; */
     letter-spacing: 0.2px;
     line-height: 45px;
     /* margin-bottom: 26px; */
     font-weight: 700;
 }
+
 
 /* BUTTONS */
 
@@ -255,7 +261,6 @@ a:hover{
     position: relative;
     z-index: 0;
     color: white;
-    font-family: 'Advent Pro', sans-serif;
     font-weight: 700;
     color: white;
    
@@ -308,19 +313,33 @@ a:hover{
 }
 
 .footer-wrapper .footer-inside .social-img-links {
+    text-transform: uppercase;
     padding: 20px 0;
     width: 100%;
     display: flex;
     transition: transform 0.4s ease;
-    box-shadow: 
-            0px 1px 2px 0px rgba(0,255,255,0.7),
-            1px 2px 4px 0px rgba(0,255,255,0.7),
-            2px 4px 8px 0px rgba(0,255,255,0.7),
-            2px 4px 16px 0px rgba(0,255,255,0.7);
+    animation: social-img-links 2s infinite ease-in-out ;
+    box-shadow: 0px 0px 16px 6px rgba(0,255,255,0.7);
+    /* 0px 1px 2px 0px rgba(0,255,255,0.7), */
+    /* 1px 2px 4px 0px rgba(0,255,255,0.7), */
+    /* 2px 4px 8px 0px rgba(0,255,255,0.7), */
+    /* 2px 4px 16px 0px rgba(0,255,255,0.7); */
 }
-.footer-wrapper .footer-inside .social-img-links:hover{
-    transform: translateY(-6px);
+@keyframes social-img-links {
+
+    0% {
+        transform: translateY(0px);
+    }
+    
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
 }
+
 .footer-wrapper .footer-inside .social-img-links .txt  {
     width: 50%;
 }
@@ -347,11 +366,11 @@ a:hover{
 .footer-wrapper .scrollToTop{
     position: absolute;
     bottom: 17px;
-    right: 10px;
-    height: 55px;
-    width: 55px;
+    right: 17px;
+    height: 48px;
+    width: 48px;
     cursor: pointer;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     background: #71e2d8;
     z-index: 0;
     display: flex;
@@ -410,3 +429,47 @@ a:hover{
 
 
 }
+
+/* text-and-image */ 
+.text-and-image .text-and-image-wrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.text-and-image.reserve-imageText .text{
+    order: 1;
+    padding-left: 50px;
+    padding-right: 0 !important;
+}
+.text-and-image h2{
+    width: 100%;
+    font-size: 40px;
+    line-height: 43px;
+    margin-bottom: 50px;
+    position: relative;
+    padding-left: 17px;
+    max-width: 712px;
+}
+.text-and-image h2::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: #71e2d8;
+}
+.text-and-image .text-and-image-wrap .text{
+    width: 50%;
+    padding-right: 50px;
+}
+.text-and-image .text-and-image-wrap .image {
+    width: 50%;
+}
+.text-and-image .text-and-image-wrap .image img{
+    object-fit: cover;
+    height: 100%;
+    width: 500px;
+}
+
+
