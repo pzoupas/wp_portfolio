@@ -46,6 +46,37 @@
     </section>
     <?php endif; ?>
 
+    <section class="milestone" >
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="milestone-wrap">
+                <div class="milestone-wrap">
+                    <div class="milestone-inner">
+
+                        <div class="milestone-inner-item">
+                            <div class="milestone-year">2018</div>
+                            <div class="milestone-summary">NetPlanet</div>
+                        </div>
+                        <div class="milestone-inner-item">
+                            <div class="milestone-year">2019 - 2021</div>
+                            <div class="milestone-summary">9pixels</div>
+                        </div>
+                        <div class="milestone-inner-item">
+                            <div class="milestone-year">2021 - 2022</div>
+                            <div class="milestone-summary">Deloitte</div>
+                        </div>
+                        <div class="milestone-inner-item">
+                            <div class="milestone-year">2022 - now</div>
+                            <div class="milestone-summary">Freelancer</div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+
 
     
 </div>

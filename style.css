@@ -473,3 +473,37 @@ a:hover{
 }
 
 
+/* milestone */
+
+.milestone{}
+.milestone .milestone-inner-item{
+    position: relative;
+    padding: 40px 40px;
+}
+.milestone .milestone-inner-item::before{
+    content: "";
+    width: 1.5px;
+    height: calc(100% + 35px);
+    position: absolute;
+    top: 0;
+    left: 9px;
+    background:var(--dark-charcoal);
+}
+.milestone-year {
+    position: relative;
+}
+.milestone-year::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -38px;
+    width: 16px;
+    height: 16px;
+    background:var(--dark-charcoal);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+.milestone-year{
+    font-size: 40px;
+    line-height: 45px;
+}
