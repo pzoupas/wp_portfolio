@@ -30,24 +30,24 @@
     </section>
 
     <?php
-    // Έλεγχος αν τα πεδία είναι συμπληρωμένα
-    if ( get_field('text-area') && get_field('custom-image')) :
+        // Έλεγχος αν τα πεδία είναι συμπληρωμένα
+        if ( get_field('text-area') && get_field('custom-image')) :
     ?>
-    <section class="text-and-image <?php echo get_field('reserve-imagetext') ? 'reserve-imageText' : ''; ?>" >
-        <div class="container">
-            <h2><?php the_field('title'); ?></h2>
-            <div class="text-and-image-wrap">
-                
-                <div class="text">
-                    <?php the_field('text-area'); ?>
-                </div>
-                <div class="image">
-                    <?php the_field('custom-image'); ?>
-                </div>
+        <section class="text-and-image <?php echo get_field('reserve-imagetext') ? 'reserve-imageText' : ''; ?>" >
+            <div class="container">
+                <h2><?php the_field('title'); ?></h2>
+                <div class="text-and-image-wrap">
+                    
+                    <div class="text">
+                        <?php the_field('text-area'); ?>
+                    </div>
+                    <div class="image">
+                        <?php the_field('custom-image'); ?>
+                    </div>
 
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php endif; ?>
 
     <section class="milestone" >
@@ -79,12 +79,25 @@
             </div>
         </div>
     </section>
-    <section>
-    <video width="640" height="360" controls>
-        <source src="video/video-background.mp4" type="video/mp4">
+
+
+    <?php if ( get_field('my-video') && get_field('video-text') ): ?>
+        <section class="video-file" >
+            <div class="container">
+                <div class="video-info">
+                    <?php if ( get_field('video-title') ): ?>
+                        <div class="video-title"><h3><?php the_field('video-title'); ?></h3></div>
+                    <?php endif; ?>
+                    <div class="video-text"><span><?php the_field('video-text'); ?></span></div>
+                </div>
+                <video class="video-upload " autoplay loop muted >
+                    <source src="<?php echo esc_url( get_field('my-video') ); ?>" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+            </div>
             
-    </video>
-    </section>
+        </section>
+    <?php endif; ?>
 
     <?php get_template_part('components/contact-form'); ?> 
     
