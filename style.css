@@ -62,7 +62,7 @@ html {
 	font: inherit;
 }
 body {
-    color: var(--dark-charcoal);;
+    color: var(--dark-charcoal);
     overflow-x: hidden;
     line-height: 20px;
     font-size: 16px;
@@ -129,10 +129,10 @@ section{
 
 
 h2 {
-    /* font-size: 40px; */
-    letter-spacing: 0.2px;
-    line-height: 45px;
-    /* margin-bottom: 26px; */
+    font-size: 50px;
+    letter-spacing: 0.3px;
+    line-height: 55px;
+    margin-bottom: 40px;
     font-weight: 700;
 }
 
@@ -476,34 +476,72 @@ a:hover{
 /* milestone */
 
 .milestone{}
+
 .milestone .milestone-inner-item{
     position: relative;
     padding: 40px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.milestone .milestone-inner-item:hover .milestone-summary{
+    opacity: 1;
 }
 .milestone .milestone-inner-item::before{
     content: "";
-    width: 1.5px;
+    width: 2px;
     height: calc(100% + 35px);
     position: absolute;
     top: 0;
     left: 9px;
     background:var(--dark-charcoal);
 }
-.milestone-year {
+.milestone .milestone-year {
+    display: inline-block;
     position: relative;
+    font-size: 60px;
+    line-height: 60px;
+    color: #ddd4cc;
+    cursor: pointer;
+    transition: color 0.4s ease-in-out;
+    width: 50%;
 }
-.milestone-year::before{
+.milestone .milestone-year:hover{
+    color: var(--dark-charcoal);
+}
+
+.milestone .milestone-year::before{
     content: "";
     position: absolute;
-    top: 10px;
-    left: -38px;
-    width: 16px;
-    height: 16px;
-    background:var(--dark-charcoal);
-    transition: 0.3s ease;
+    top: 12px;
+    left: -36px;
+    width: 12px;
+    height: 12px;
+    background:#ddd4cc;
+    transition: 0.4s ease-in-out;
     z-index: 999;
 }
-.milestone-year{
-    font-size: 40px;
-    line-height: 45px;
+.milestone .milestone-year:hover:before{
+    background:var(--dark-charcoal);
 }
+.milestone .milestone-year::after{
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -39px;
+    width: 18px;
+    height: 20px;
+    background: white ;
+    transition: 0.3s ease;
+    z-index: 998;
+}
+
+
+.milestone .milestone-summary{
+    font-size: 50px;
+    line-height: 50px;
+    width: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
