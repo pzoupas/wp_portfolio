@@ -12,14 +12,18 @@
                     <div class="big-title"><?php the_content(); ?></div>
                     
                     <div class="hero-animation">
-                        <div class="bars scroll_to_next">
+                        <div class="bars ">
                             <div class="bar-one"></div>
                             <div class="bar-two"></div>
                         </div>
+                        <div class="circle-scroll scroll_to_next">
+                            <div class="img-scroll"></div>
+                            <div class="arrow-scroll"></div>
+                        </div>       
                     </div>
                 </div>
                 <!-- <div class="newsImage">
-                    <img src="/images/dog-image.jpg" title="">
+                    
                 </div> -->
             </div>
         </div>
@@ -75,22 +79,15 @@
             </div>
         </div>
     </section>
-
-    <section class="contact-form" >
-        <div class="container">
-            <h2><?php the_field('title-form'); ?></h2>
-            <?php acf_form(array(
-                'post_id' => 'new_post',
-                'post_title' => false, // Default:true -> το αλλαζω σε false για να εξαφανιζω το title* 
-                'post_content' => false,
-                'submit_value' => 'Submit Form',
-                'fields' => array('name', 'email', 'object', 'summary'),
-            ));?>
-        </div>
+    <section>
+    <video width="640" height="360" controls>
+        <source src="video/video-background.mp4" type="video/mp4">
+            
+    </video>
     </section>
-  
+
+    <?php get_template_part('components/contact-form'); ?> 
     
-   
 </div>
 
 	

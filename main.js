@@ -18,6 +18,17 @@ $(document).ready(function() {
         return false;
       });
 
+    /***** Fade Header When I scroll Down   ****/
+      $(window).scroll(function () {
+        if ($(this).scrollTop() < 80) {
+            $('.header').fadeIn(500); //500ms
+        } else {
+            $('.header').fadeOut(500);
+        }
+    });
+
+    
+
 
 
 });

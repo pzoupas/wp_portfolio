@@ -18,10 +18,16 @@
     z-index: 0;
 }
 
-
-.hero-banner .hero-animation .bars{
+.hero-banner .hero-animation{
     position: relative;
-    z-index: 0;
+    z-index: 9;
+}
+.hero-banner .hero-animation .bars{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
 }
 .hero-banner .hero-animation .bar-one{
         width: 3px;
@@ -53,4 +59,45 @@
     }
 
 }
+.circle-scroll{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    
+}
+.circle-scroll .img-scroll{
+    background-image: url(../followpanos/assets/images/scrolldown.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 220px;
+    height: 220px;
+    animation: img-scroll 10s infinite linear;
+    z-index: 10;
+}
 
+@keyframes img-scroll {
+
+    to {
+        transform: rotate(1turn);
+    }
+
+
+
+
+
+}
+.circle-scroll .arrow-scroll{
+    background-image: url(../followpanos/assets/images/scrolldown-arrow.svg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 32px;
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50% , -50%);
+}
