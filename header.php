@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio Panagiotis Zoupas">  
     <!-- <link rel="shortcut icon" href="images/logo.png">  -->
-    
+	
+    <?php acf_form_head(); ?>
+
    
 </head> 
 

@@ -486,6 +486,7 @@ a:hover{
 }
 .milestone .milestone-inner-item:hover .milestone-summary{
     opacity: 1;
+    pointer-events: none;
 }
 .milestone .milestone-inner-item::before{
     content: "";
