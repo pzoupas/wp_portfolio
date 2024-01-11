@@ -1,8 +1,9 @@
 <?php
     get_header();
 ?>
-    
 <div class="main-wrapper">
+
+    <?php get_template_part('components/login-form'); ?>  
 	   
 	<section class="hero-banner">
         <div class="container">
@@ -22,9 +23,6 @@
                         </div>       
                     </div>
                 </div>
-                <!-- <div class="newsImage">
-                    
-                </div> -->
             </div>
         </div>
     </section>
@@ -85,6 +83,7 @@
         <section class="video-file" >
             <div class="container">
                 <div class="video-info">
+                    <!-- Video -->
                     <?php if ( get_field('video-title') ): ?>
                         <div class="video-title"><h3><?php the_field('video-title'); ?></h3></div>
                     <?php endif; ?>
@@ -93,13 +92,15 @@
                 <video class="video-upload " autoplay loop muted >
                     <source src="<?php echo esc_url( get_field('my-video') ); ?>" type="video/mp4">
                 </video>
+                
                 <div class="overlay"></div>
             </div>
-            
         </section>
     <?php endif; ?>
 
-    <?php get_template_part('components/contact-form'); ?> 
+    
+    <?php get_template_part('components/contact-form'); ?>  
+    
     
 </div>
 
