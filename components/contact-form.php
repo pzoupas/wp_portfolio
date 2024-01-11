@@ -1,15 +1,13 @@
 <section class="contact-form" >
     <div class="container">
         <h2><?php the_field('title-form'); ?></h2>
-        <?php acf_form(array(
-            'post_id' => 'new_post',
-            'post_title' => false, // Default:true -> το αλλαζω σε false για να εξαφανιζω το title*  
-            'post_content' => false,
-            'submit_value' => 'Send',
-            'fields' => array('name', 'email', 'object', 'summary'),
-        ));?>
+        <?php 
+            $shortcode = get_field('contact-form-shortcode');
+            echo do_shortcode($shortcode);
+        ?>
     </div>
 </section>
+<!-- 
 <div class="popup d-none">
     <div class="popupOverlay"></div>
     <div class="popupBox">
@@ -18,4 +16,5 @@
         <p>Το μήνυμά σας εστάλη με επιτυχία</p>
         <span></span>
     </div>
-</div>
+</div> -->
+
